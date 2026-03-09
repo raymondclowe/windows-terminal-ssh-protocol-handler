@@ -8,7 +8,7 @@
 #   irm https://raw.githubusercontent.com/raymondclowe/windows-terminal-ssh-protocol-handler/main/install.ps1 | iex
 
 param(
-    [string]$InstallPath = (Join-Path $HOME "Documents\PowerShell\Scripts")
+    [string]$InstallPath = (Join-Path ([Environment]::GetFolderPath('MyDocuments')) "PowerShell\Scripts")
 )
 
 $ErrorActionPreference = 'Stop'
@@ -38,7 +38,7 @@ Write-Host "Setting up registry keys..."
 
 $handlerClass    = 'WTHandler.URLHandler.1'
 $handlerClassKey = "HKCU:\SOFTWARE\Classes\$handlerClass"
-$command         = "powershell `"$scriptDestination`" %1"
+$command         = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "' + $scriptDestination + '" "%1"'
 
 # Create handler class keys
 New-Item -Path "$handlerClassKey\shell\open\command" -Force | Out-Null
