@@ -8,10 +8,39 @@ When set as the protcol handler for SSH it can open links passed by your browser
 Use at your own risk. I haven't extensively tested this and I do not profess to be fluent in Powershell Scripting. Fixes and cleanup are welcome.
 
 ### Features:
-* Parses passed SSH links such as `ssh://someone@someserverip:22` and attempts to santize the input
+* Parses passed SSH links such as `ssh://someone@someserverip:22` and attempts to sanitize the input
 * Verifies the required applications are installed
 * Allows you to choose between OpenSSH and plink (Putty) SSH Clients
-* Contructs the arguments required by Windows Terminal and the SSH Client
+* Constructs the arguments required by Windows Terminal and the SSH Client
+
+## Installation
+
+### One-line Install (Recommended)
+
+Run the following command in PowerShell to automatically download the handler script and configure all required registry keys for the current user:
+
+```powershell
+irm https://raw.githubusercontent.com/raymondclowe/windows-terminal-ssh-protocol-handler/main/install.ps1 | iex
+```
+
+> **Security note:** As with any `irm ... | iex` install command, you are trusting the content served over HTTPS from this repository. You can review the [`install.ps1`](install.ps1) script before running it.
+
+The installer will:
+1. Download `windows-terminal-ssh-protocol-handler.ps1` to `~\Documents\PowerShell\Scripts\`
+2. Create all required registry entries so `ssh://` links open in Windows Terminal
+3. Register the application so Windows recognises the protocol handler
+
+#### Custom Install Path
+
+To install the handler script to a different directory, save `install.ps1` locally and run it with the `-InstallPath` parameter:
+
+```powershell
+.\install.ps1 -InstallPath "C:\Scripts"
+```
+
+### Manual Installation
+
+Alternatively, copy `windows-terminal-ssh-protocol-handler.ps1` to a location of your choosing, edit `add-ssh-handler.reg` to replace `<User>` with your Windows username, and then double-click the `.reg` file to import the registry entries.
 
 ## Requirements
 * **Windows Terminal**
