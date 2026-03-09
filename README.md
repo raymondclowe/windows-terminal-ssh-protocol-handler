@@ -20,7 +20,7 @@ Use at your own risk. I haven't extensively tested this and I do not profess to 
 Run the following command in PowerShell to automatically download the handler script and configure all required registry keys for the current user:
 
 ```powershell
-irm https://raw.githubusercontent.com/raymondclowe/windows-terminal-ssh-protocol-handler/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/raymondclowe/windows-terminal-ssh-protocol-handler/master/install.ps1 | iex
 ```
 
 > **Security note:** As with any `irm ... | iex` install command, you are trusting the content served over HTTPS from this repository. You can review the [`install.ps1`](install.ps1) script before running it.

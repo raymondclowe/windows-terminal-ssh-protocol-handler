@@ -5,7 +5,7 @@
 # Github: https://github.com/raymondclowe/windows-terminal-ssh-protocol-handler/
 #
 # Install from web (one-liner):
-#   irm https://raw.githubusercontent.com/raymondclowe/windows-terminal-ssh-protocol-handler/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/raymondclowe/windows-terminal-ssh-protocol-handler/master/install.ps1 | iex
 
 param(
     [string]$InstallPath = (Join-Path ([Environment]::GetFolderPath('MyDocuments')) "PowerShell\Scripts")
@@ -16,7 +16,7 @@ $ErrorActionPreference = 'Stop'
 $repoOwner  = 'raymondclowe'
 $repoName   = 'windows-terminal-ssh-protocol-handler'
 $scriptName = 'windows-terminal-ssh-protocol-handler.ps1'
-$rawBaseUrl = "https://raw.githubusercontent.com/$repoOwner/$repoName/main"
+$rawBaseUrl = "https://raw.githubusercontent.com/$repoOwner/$repoName/master"
 
 Write-Host "Windows Terminal SSH Protocol Handler - Installer" -ForegroundColor Cyan
 Write-Host "=================================================" -ForegroundColor Cyan
