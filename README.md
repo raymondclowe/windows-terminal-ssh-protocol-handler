@@ -8,7 +8,7 @@ When set as the protcol handler for SSH it can open links passed by your browser
 Use at your own risk. I haven't extensively tested this and I do not profess to be fluent in Powershell Scripting. Fixes and cleanup are welcome.
 
 ### Features:
-* Parses passed SSH links such as `ssh://someone@someserverip:22` and attempts to santize the input
+* Parses passed SSH links such as `ssh://someone@someserverip:22` and attempts to sanitize the input
 * Verifies the required applications are installed
 * Allows you to choose between OpenSSH and plink (Putty) SSH Clients
 * Constructs the arguments required by Windows Terminal and the SSH Client
